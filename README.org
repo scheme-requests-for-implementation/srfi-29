@@ -1,8 +1,8 @@
-* SRFI 29: Localization 
+* SRFI 29: Localization
 
 ** by Scott G. Miller
 
-This repository hosts [[https://srfi.schemers.org/srfi-29/][SRFI 29]]: Localization , a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
+This repository hosts [[https://srfi.schemers.org/srfi-29/][SRFI 29]]: Localization, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
 This SRFI is in /final/ status.
 
