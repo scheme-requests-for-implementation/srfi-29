@@ -70,7 +70,7 @@
 
     <H1>Dependencies</H1>
 
-    An SRFI-29 conformant implementation must also implement
+    A SRFI-29 conformant implementation must also implement
     SRFI-28, Basic Format Strings. Message templates are strings
     that must be processed by the <tt>format</tt> function
     specified in that SRFI. 
@@ -402,7 +402,7 @@
                           ((null? (cdr specifier)) #f)
                           (else (loop (rdc specifier)))))))))))
 
-;;An SRFI-28 and SRFI-29 compliant version of format.  It requires
+;;A SRFI-28 and SRFI-29 compliant version of format.  It requires
 ;;SRFI-23 for error reporting.
 (define format
   (lambda (format-string . objects)
