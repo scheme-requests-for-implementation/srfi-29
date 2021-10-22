@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="generator" content="HTML Tidy, see www.w3.org">
@@ -69,7 +69,7 @@
 
     A SRFI-29 conformant implementation must also implement
     SRFI-28, Basic Format Strings. Message templates are strings
-    that must be processed by the <tt>format</tt> function
+    that must be processed by the <code>format</code> function
     specified in that SRFI.
 
     <H1>Specification</H1>
@@ -98,7 +98,7 @@
     symbols.</p>
 
     <p>If only one translation is provided, it should be designated
-    only by a package name, for example <tt>(mathlib)</tt>. This
+    only by a package name, for example <code>(mathlib)</code>. This
     translation is called the <i>default</i> translation.</p>
 
     <h3>Bundle Searching</h3>
@@ -109,15 +109,15 @@
     the package name will be specified. The Scheme system should
     construct a Bundle Specifier from the provided package name and
     the active locale. For example, when retrieving a message
-    template for French Canadian, in the <tt>mathlib</tt> package,
-    the bundle specifier '<tt>(mathlib fr ca)</tt>' is used. A
+    template for French Canadian, in the <code>mathlib</code> package,
+    the bundle specifier '<code>(mathlib fr ca)</code>' is used. A
     program may also retrieve the elements of the current locale
     using the no-argument procedures:</p>
 
-    <p><b><tt>current-language</tt></b> <tt>-&gt;
-    <i>symbol</i></tt><br>
-     <tt><b>current-language</b> <i>symbol</i> -&gt;
-    undefined</tt><br>
+    <p><b><code>current-language</code></b> <code>-&gt;
+    <i>symbol</i></code><br>
+     <code><b>current-language</b> <i>symbol</i> -&gt;
+    undefined</code><br>
     </p>
 
     <blockquote>
@@ -129,10 +129,10 @@
       &nbsp;
     </blockquote>
 
-    <p><b><tt>current-country</tt></b> <tt>-&gt;
-    <i>symbol</i></tt><br>
-     <tt><b>current-country</b> <i>symbol</i> -&gt;
-    undefined</tt><br>
+    <p><b><code>current-country</code></b> <code>-&gt;
+    <i>symbol</i></code><br>
+     <code><b>current-country</b> <i>symbol</i> -&gt;
+    undefined</code><br>
     </p>
 
     <blockquote>
@@ -143,10 +143,10 @@
       distinction is not possible). &nbsp;&nbsp;
     </blockquote>
 
-    <p><b><tt>current-locale-details</tt></b> <tt>-&gt; <i>list of
-    symbol</i></tt>s<br>
-     <tt><b>current-locale-details</b> <i>list-of-symbols</i> -&gt;
-    undefined</tt><br>
+    <p><b><code>current-locale-details</code></b> <code>-&gt; <i>list of
+    symbol</i></code>s<br>
+     <code><b>current-locale-details</b> <i>list-of-symbols</i> -&gt;
+    undefined</code><br>
     </p>
 
     <blockquote>
@@ -177,15 +177,15 @@
     <p>A message template is a localized message that may or may
     not contain one of a number of formatting codes. A message
     template is a Scheme string. The string is of a form that can
-    be processed by the <tt>format</tt> procedure found in many
+    be processed by the <code>format</code> procedure found in many
     Scheme systems and formally specified in SRFI-28 (Basic Format
     Strings).</p>
 
     <p>This SRFI also extends SRFI-28 to provide an additional
-    <tt>format</tt> escape code:</p>
+    <code>format</code> escape code:</p>
 
     <blockquote>
-      <tt>~[n]@*</tt> - Causes a value-requiring escape code that
+      <code>~[n]@*</code> - Causes a value-requiring escape code that
       follows this code immediately to reference the [N]'th
       optional value absolutely, rather than the next unconsumed
       value. The referenced value is <i>not</i> consumed.
@@ -203,9 +203,9 @@
     outside the Scheme system.<br>
 
 
-    <p><b><tt>declare-bundle!</tt></b> <tt><i>bundle-specifier
+    <p><b><code>declare-bundle!</code></b> <code><i>bundle-specifier
     association-list</i> -&gt; undefined<br>
-    </tt></p>
+    </code></p>
 
     <blockquote>
       Declares a new bundle named by the given bundle-specifier.
@@ -216,20 +216,20 @@
       given name, it is overwritten with the newly declared
       bundle.<br>
     </blockquote>
-    <tt><b>store-bundle</b> <i>bundle-specifier</i> -&gt;
-    boolean</tt><br>
+    <code><b>store-bundle</b> <i>bundle-specifier</i> -&gt;
+    boolean</code><br>
 
 
     <blockquote>
       Attempts to store a bundle named by the given bundle
       specifier, and previously made available using
-      <tt>declare-bundle!</tt> or <tt>load-bundle!</tt>, in an
+      <code>declare-bundle!</code> or <code>load-bundle!</code>, in an
       unspecified mechanism that may be persistent across Scheme
       system restarts. &nbsp;If successful, a non-false value is
-      returned. &nbsp;If unsuccessful, <tt>#f</tt> is returned.<br>
+      returned. &nbsp;If unsuccessful, <code>#f</code> is returned.<br>
     </blockquote>
-    <tt><b>load-bundle!</b> <i>bundle-specifier</i> -&gt;
-    boolean</tt><br>
+    <code><b>load-bundle!</b> <i>bundle-specifier</i> -&gt;
+    boolean</code><br>
 
 
     <blockquote>
@@ -238,14 +238,14 @@
       bundle was retrieved successfully, the function returns a
       non-false value, and the bundle is immediately available to
       the Scheme system. If the bundle could not be found or loaded
-      successfully, the function returns <tt>#f</tt>, and the
+      successfully, the function returns <code>#f</code>, and the
       Scheme system's bundle registry remains unaffected.<br>
     </blockquote>
     A compliant Scheme system may choose not to provide any
     external mechanism to store localized bundles. &nbsp;If it does
     not, it must still provide implementations for
-    <tt>store-bundle</tt> and <tt>load-bundle!</tt>. In such a
-    case, both functions must return <tt>#f</tt> regardless of the
+    <code>store-bundle</code> and <code>load-bundle!</code>. In such a
+    case, both functions must return <code>#f</code> regardless of the
     arguments given. Users of this SRFI should recognize that the
     inability to load or store a localized bundle in an external
     repository is <i>not</i> a fatal error.<br>
@@ -253,9 +253,9 @@
 
     <h3>Retrieving Localized Message Templates</h3>
 
-    <p><b><tt>localized-template</tt></b> <i><tt>package-name
-    message-template-name</tt></i> <tt>-&gt; <i>string or #f<br>
-    </i></tt></p>
+    <p><b><code>localized-template</code></b> <i><code>package-name
+    message-template-name</code></i> <code>-&gt; <i>string or #f<br>
+    </i></code></p>
 
     <blockquote>
       Retrieves a localized message template for the given package
@@ -265,7 +265,7 @@
       <br>
     </blockquote>
     After retrieving a template, the calling program can use
-    <tt>format</tt> to produce a string that can be displayed to
+    <code>format</code> to produce a string that can be displayed to
     the user.<br>
 
 
@@ -314,8 +314,8 @@
     <H1>Implementation</H1>
 
     <p>The implementation requires that the Scheme system provide a
-    definition for <tt>current-language</tt> and
-    <tt>current-country</tt> capable of distinguishing the correct
+    definition for <code>current-language</code> and
+    <code>current-country</code> capable of distinguishing the correct
     locale present during a Scheme session. The definitions of
     those functions in the reference implementation are not capable
     of that distinction. Their implementation is provided only so
@@ -324,7 +324,7 @@
     </p>
 
     <p>In addition, the below implementation of a compliant
-    <tt>format</tt> requires SRFI-6 (Basic String Ports) and
+    <code>format</code> requires SRFI-6 (Basic String Ports) and
     SRFI-23 (Error reporting)</p>
 <pre>
 ;; The association list in which bundles will be stored
@@ -500,7 +500,7 @@
       <hr>
 
     <address>
-      Editor: <a href="mailto:srfi minus editors at srfi dot schemers dot org">David
+      Editor: <a href="mailto:srfi+minus+editors+at+srfi+dot+schemers+dot+org">David
       Rush</a>
     </address>
 
