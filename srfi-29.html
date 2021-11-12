@@ -114,7 +114,7 @@
     program may also retrieve the elements of the current locale
     using the no-argument procedures:</p>
 
-    <p><b><code>current-language</code></b> <code>-&gt;
+    <p><b><code id="current-language">current-language</code></b> <code>-&gt;
     <i>symbol</i></code><br>
      <code><b>current-language</b> <i>symbol</i> -&gt;
     undefined</code><br>
@@ -129,7 +129,7 @@
       &nbsp;
     </blockquote>
 
-    <p><b><code>current-country</code></b> <code>-&gt;
+    <p><b><code id="current-country">current-country</code></b> <code>-&gt;
     <i>symbol</i></code><br>
      <code><b>current-country</b> <i>symbol</i> -&gt;
     undefined</code><br>
@@ -143,7 +143,7 @@
       distinction is not possible). &nbsp;&nbsp;
     </blockquote>
 
-    <p><b><code>current-locale-details</code></b> <code>-&gt; <i>list of
+    <p><b><code id="current-locale-details">current-locale-details</code></b> <code>-&gt; <i>list of
     symbol</i></code>s<br>
      <code><b>current-locale-details</b> <i>list-of-symbols</i> -&gt;
     undefined</code><br>
@@ -203,7 +203,7 @@
     outside the Scheme system.<br>
 
 
-    <p><b><code>declare-bundle!</code></b> <code><i>bundle-specifier
+    <p><b><code id="declare-bundle!">declare-bundle!</code></b> <code><i>bundle-specifier
     association-list</i> -&gt; undefined<br>
     </code></p>
 
@@ -216,7 +216,7 @@
       given name, it is overwritten with the newly declared
       bundle.<br>
     </blockquote>
-    <code><b>store-bundle</b> <i>bundle-specifier</i> -&gt;
+    <code id="store-bundle"><b>store-bundle</b> <i>bundle-specifier</i> -&gt;
     boolean</code><br>
 
 
@@ -228,7 +228,7 @@
       system restarts. &nbsp;If successful, a non-false value is
       returned. &nbsp;If unsuccessful, <code>#f</code> is returned.<br>
     </blockquote>
-    <code><b>load-bundle!</b> <i>bundle-specifier</i> -&gt;
+    <code id="load-bundle!"><b>load-bundle!</b> <i>bundle-specifier</i> -&gt;
     boolean</code><br>
 
 
@@ -253,7 +253,7 @@
 
     <h3>Retrieving Localized Message Templates</h3>
 
-    <p><b><code>localized-template</code></b> <i><code>package-name
+    <p><b><code id="localized-template">localized-template</code></b> <i><code>package-name
     message-template-name</code></i> <code>-&gt; <i>string or #f<br>
     </i></code></p>
 
