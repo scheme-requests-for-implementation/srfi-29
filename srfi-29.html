@@ -10,15 +10,15 @@
     <meta name="description" content="Localization">
   </head>
   <body>
-    <H1>Title</H1>
+    <h1>Title</h1>
 
     Localization
 
-    <H1>Author</H1>
+    <h1>Author</h1>
 
     Scott G. Miller
 
-    <H1>Status</H1>
+    <h1>Status</h1>
 
     <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+29+at+srfi+dotschemers+dot+org">srfi-29@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-29">archive</a>.</p>
 <ul>
@@ -26,7 +26,7 @@
       <li>Final: 2002-06-19
     </ul>
 
-    <H1>Abstract</H1>
+    <h1>Abstract</h1>
 
     This document specifies an interface to retrieving and
     displaying locale sensitive messages. A Scheme program can
@@ -36,7 +36,7 @@
     system is running. <br>
 
 
-    <H1>Rationale</H1>
+    <h1>Rationale</h1>
 
     <p>As any programmer that has ever had to deal with making his
     or her code readable in more than one locale, the process of
@@ -65,14 +65,14 @@
     number and date formatting, etc. Such functionality is the
     scope of a future SRFI that may extend this one.</p>
 
-    <H1>Dependencies</H1>
+    <h1>Dependencies</h1>
 
     A SRFI-29 conformant implementation must also implement
     SRFI-28, Basic Format Strings. Message templates are strings
     that must be processed by the <code>format</code> function
     specified in that SRFI.
 
-    <H1>Specification</H1>
+    <h1>Specification</h1>
 
     <h3>Message Bundles</h3>
 
@@ -311,7 +311,7 @@
 ;; Au revoir, Fred.
 </pre>
 
-    <H1>Implementation</H1>
+    <h1>Implementation</h1>
 
     <p>The implementation requires that the Scheme system provide a
     definition for <code>current-language</code> and
@@ -471,7 +471,7 @@
 
 </pre>
 
-    <H1 id="copyright">Copyright</H1>
+    <h1 id="copyright">Copyright</h1>
     &copy; 2002 Scott G. Miller.
 
     <p>
