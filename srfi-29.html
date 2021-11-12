@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta charset="utf-8">
     <title>SRFI 29: Localization</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/srfi.css" type="text/css" />
-    <meta name="author" content="Scott G. Miller">
-    <meta name="description" content="Localization">
-  </head>
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
+    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"></head>
   <body>
-    <h1>Title</h1>
+    <h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>29: Localization</h1>
 
-    Localization
+<p>by Scott G. Miller</p>
 
-    <h1>Author</h1>
-
-    Scott G. Miller
-
-    <h1>Status</h1>
+<h2 id="status">Status</h2>
 
     <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+29+at+srfi+dotschemers+dot+org">srfi-29@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-29">archive</a>.</p>
 <ul>
@@ -26,17 +19,17 @@
       <li>Final: 2002-06-19
     </ul>
 
-    <h1>Abstract</h1>
+    <h2 id="abstract">Abstract</h2>
 
-    This document specifies an interface to retrieving and
+    <p>This document specifies an interface to retrieving and
     displaying locale sensitive messages. A Scheme program can
     register one or more translations of templated messages, and
     then write Scheme code that can transparently retrieve the
     appropriate message for the locale under which the Scheme
-    system is running. <br>
+    system is running.</p>
 
 
-    <h1>Rationale</h1>
+    <h2 id="rationale">Rationale</h2>
 
     <p>As any programmer that has ever had to deal with making his
     or her code readable in more than one locale, the process of
@@ -65,14 +58,14 @@
     number and date formatting, etc. Such functionality is the
     scope of a future SRFI that may extend this one.</p>
 
-    <h1>Dependencies</h1>
+    <h2 id="dependencies">Dependencies</h2>
 
-    A SRFI-29 conformant implementation must also implement
+    <p>A SRFI-29 conformant implementation must also implement
     SRFI-28, Basic Format Strings. Message templates are strings
     that must be processed by the <code>format</code> function
-    specified in that SRFI.
+    specified in that SRFI.</p>
 
-    <h1>Specification</h1>
+    <h2 id="specification">Specification</h2>
 
     <h3>Message Bundles</h3>
 
@@ -190,17 +183,17 @@
       optional value absolutely, rather than the next unconsumed
       value. The referenced value is <i>not</i> consumed.
     </blockquote>
-    This extension allows optional values to be positionally
+    <p>This extension allows optional values to be positionally
     referenced, so that message templates can be constructed that
-    can produce the proper word ordering for a language.
+    can produce the proper word ordering for a language.</p>
 
     <h3>Preparing Bundles</h3>
-    Before a bundle may be used by the Scheme system to retrieve
+    <p>Before a bundle may be used by the Scheme system to retrieve
     localized template messages, they must be made available to the
     Scheme system. &nbsp;This SRFI specifies a way to portably
     define the bundles, as well as store them in and retrieve them
     from an unspecified system which may be provided by resources
-    outside the Scheme system.<br>
+    outside the Scheme system.</p>
 
 
     <p><b><code id="declare-bundle!">declare-bundle!</code></b> <code><i>bundle-specifier
@@ -241,14 +234,14 @@
       successfully, the function returns <code>#f</code>, and the
       Scheme system's bundle registry remains unaffected.<br>
     </blockquote>
-    A compliant Scheme system may choose not to provide any
+    <p>A compliant Scheme system may choose not to provide any
     external mechanism to store localized bundles. &nbsp;If it does
     not, it must still provide implementations for
     <code>store-bundle</code> and <code>load-bundle!</code>. In such a
     case, both functions must return <code>#f</code> regardless of the
     arguments given. Users of this SRFI should recognize that the
     inability to load or store a localized bundle in an external
-    repository is <i>not</i> a fatal error.<br>
+    repository is <i>not</i> a fatal error.</p>
 
 
     <h3>Retrieving Localized Message Templates</h3>
@@ -264,16 +257,16 @@
       returned.<br>
       <br>
     </blockquote>
-    After retrieving a template, the calling program can use
+    <p>After retrieving a template, the calling program can use
     <code>format</code> to produce a string that can be displayed to
-    the user.<br>
+    the user.</p>
 
 
-    <h2>Examples</h2>
-    The below example makes use of SRFI-29 to display simple,
+    <h3>Examples</h3>
+   <p>The below example makes use of SRFI-29 to display simple,
     localized messages. &nbsp;It also defines its bundles in such a
     way that the Scheme system may store and retrieve the bundles
-    from a more efficient system catalog, if available.<br>
+    from a more efficient system catalog, if available.</p>
 
 <pre>
 (let ((translations
@@ -311,7 +304,7 @@
 ;; Au revoir, Fred.
 </pre>
 
-    <h1>Implementation</h1>
+    <h2 id="implementation">Implementation</h2>
 
     <p>The implementation requires that the Scheme system provide a
     definition for <code>current-language</code> and
@@ -471,8 +464,8 @@
 
 </pre>
 
-    <h1 id="copyright">Copyright</h1>
-    &copy; 2002 Scott G. Miller.
+    <h2 id="copyright">Copyright</h2>
+    <p>&copy; 2002 Scott G. Miller.</p>
 
     <p>
       Permission is hereby granted, free of charge, to any person
